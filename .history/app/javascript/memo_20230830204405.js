@@ -19,7 +19,7 @@ function post (){
     e.preventDefault();
     const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
-    XHR.open("POST", "/posts", true);  //「post」→「posts」に戻す
+    XHR.open("POST", "/post", true);  //「posts」→「post」にする
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
