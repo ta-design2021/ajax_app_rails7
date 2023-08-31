@@ -9,7 +9,7 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
-default: &default
+default: &default # adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # 20230831下記をコメントアウト
@@ -60,10 +60,6 @@ test:
 #
 production:
   <<: *default
-  # 20230831下記を追記
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
-  # 20230831下記をコメントアウト
-  # database: ajax_app_rails7_2_production
-  # username: ajax_app_rails7_2
-  # password: <%= ENV["AJAX_APP_RAILS7_2_DATABASE_PASSWORD"] %>
+  database: ajax_app_rails7_2_production
+  username: ajax_app_rails7_2
+  password: <%= ENV["AJAX_APP_RAILS7_2_DATABASE_PASSWORD"] %>

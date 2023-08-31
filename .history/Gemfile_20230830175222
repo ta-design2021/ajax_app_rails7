@@ -72,7 +72,3 @@ group :test do
 end
 
 gem 'pry-rails'
-# 20230831下記を追記
-group :production do
-  gem 'pg'
-end
